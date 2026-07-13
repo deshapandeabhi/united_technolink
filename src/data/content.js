@@ -4,10 +4,40 @@ export const partners = [
 ];
 
 export const stats = [
-  { value: "10+", label: "Years of Expertise" },
-  { value: "9+", label: "Global Technology Partners" },
-  { value: "100%", label: "End-to-End IT Solutions" },
-  { value: "24/7", label: "Proactive Support" },
+  { value: "10+", label: "Years of Expertise", icon: "Award" },
+  { value: "9+", label: "Global Technology Partners", icon: "Handshake" },
+  { value: "100%", label: "End-to-End IT Solutions", icon: "Layers" },
+  { value: "24/7", label: "Proactive Support", icon: "LifeBuoy" },
+];
+
+export const valueProps = [
+  { label: "IT Infrastructure & Assessment", icon: "SearchCheck" },
+  { label: "Solution Design & Planning", icon: "ClipboardList" },
+  { label: "Deployment & Integration", icon: "Server" },
+  { label: "Managed IT Support Services", icon: "LifeBuoy" },
+];
+
+export const processSteps = [
+  {
+    title: "Assessment",
+    body: "We begin by understanding your complete IT and infrastructure needs through in-depth consultation and environment study.",
+    icon: "SearchCheck",
+  },
+  {
+    title: "Solution Design",
+    body: "Our experts design a precise, future-ready roadmap for your IT and digital transformation objectives.",
+    icon: "ClipboardList",
+  },
+  {
+    title: "Deployment",
+    body: "Certified engineers execute implementation with minimal disruption, strict quality control, and complete transparency.",
+    icon: "Server",
+  },
+  {
+    title: "Managed Support",
+    body: "Proactive monitoring, maintenance, and responsive support keep your environment secure and performing at its best.",
+    icon: "LifeBuoy",
+  },
 ];
 
 export const whyChooseUs = [
@@ -40,6 +70,27 @@ export const whyChooseUs = [
     title: "Strategic Technology Partnerships",
     body: "Our strong alliances with leading global technology vendors ensure our customers receive world-class products, expert support, and future-ready technologies.",
     icon: "Network",
+  },
+];
+
+export const homeFeatureCards = [
+  {
+    title: "Reliable Datacenter Design & Implementation",
+    body: "Our datacenter solutions ensure secure deployment, seamless integration, and reliable performance across complex enterprise IT environments.",
+    icon: "Server",
+    checklist: ["Data Protection", "Data Storage", "Converged Infrastructure", "Disaster Recovery as a Service", "Infrastructure as a Service", "Hybrid Datacenter Services"],
+  },
+  {
+    title: "Enterprise-Grade Network & Security",
+    body: "Comprehensive, layered cybersecurity that secures every level of your network while enabling safe, seamless access for authorized users.",
+    icon: "ShieldCheck",
+    checklist: ["Next-Gen Firewalls (NGFW)", "VPN & Multi-Factor Authentication", "Data Loss Prevention", "Endpoint & Email Security", "Intrusion Prevention Systems", "IT Security Audit & Compliance"],
+  },
+  {
+    title: "Secure, Scalable, Cloud-Ready Environment",
+    body: "We design cloud-ready IT infrastructure focused on security, scalability, and resilience — with seamless integration across enterprise systems.",
+    icon: "Cloud",
+    checklist: ["Private, Hybrid & Multi-Cloud", "Secure Cloud Infrastructure", "Endpoint & Desktop Virtualization", "Business Continuity Solutions", "Backup & Disaster Recovery", "Mobile Workforce Enablement"],
   },
 ];
 
@@ -247,4 +298,6 @@ export const advancedTech = [
 export const contact = {
   address: "#191, 16th Main Road, 36th Cross Road, 4th T Block, Jayanagar, Bangalore - 560041",
   city: "Bangalore, India",
+  legalName: "United Technolink Pvt. Ltd",
+  gst: "29AABCU8606Q1ZK",
 };
