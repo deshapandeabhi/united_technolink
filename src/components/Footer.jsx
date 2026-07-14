@@ -13,21 +13,6 @@ const quickLinks = [
   { to: "/contact", label: "Contact" },
 ];
 
-const services = [
-  "Datacenter Solutions",
-  "Enterprise Security",
-  "Structured Cabling",
-  "Intelligent Networking",
-  "Virtualization",
-];
-
-const products = [
-  "Business Computing",
-  "Storage & Backup",
-  "Network Intelligence",
-  "Endpoint Security",
-];
-
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
@@ -75,8 +60,8 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto max-w-7xl px-5 lg:px-8 py-12 sm:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
-          <div className="lg:col-span-1">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
+          <div>
             <Link to="/" className="flex items-center gap-2.5">
               <Logo className="h-10 w-10" />
               <span className="font-display font-semibold tracking-tight text-white text-base">
@@ -108,32 +93,6 @@ export default function Footer() {
                 <li key={l.to}>
                   <Link to={l.to} className="text-sm text-white/55 hover:text-brand-400 transition-colors">
                     {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-display font-medium text-sm tracking-wide uppercase mb-4 border-b-2 border-brand-500 inline-block pb-2">Services</h4>
-            <ul className="space-y-3 mt-1">
-              {services.map((s) => (
-                <li key={s}>
-                  <Link to="/expertise" className="text-sm text-white/55 hover:text-brand-400 transition-colors">
-                    {s}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-display font-medium text-sm tracking-wide uppercase mb-4 border-b-2 border-brand-500 inline-block pb-2">Products</h4>
-            <ul className="space-y-3 mt-1">
-              {products.map((p) => (
-                <li key={p}>
-                  <Link to="/products" className="text-sm text-white/55 hover:text-brand-400 transition-colors">
-                    {p}
                   </Link>
                 </li>
               ))}
