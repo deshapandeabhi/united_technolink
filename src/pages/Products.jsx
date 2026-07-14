@@ -58,7 +58,7 @@ export default function Products() {
                     </div>
                     <div className={`md:col-span-2 ${reverse ? "md:order-1" : "md:order-2"}`}>
                       <div className="rounded-2xl bg-brand-500 border border-black/5 p-5 sm:p-6 shadow-card">
-                        <p className="text-xs font-semibold uppercase tracking-widest text-white/80 mb-3.5 sm:mb-4">
+                        <p className="text-xs font-semibold uppercase tracking-widest text-ink-900 mb-3.5 sm:mb-4">
                           Capabilities
                         </p>
                         <ul className="space-y-2.5 sm:space-y-3">
