@@ -40,7 +40,7 @@ export default function AdvancedTechnologies() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.55, delay: (i % 3) * 0.06 }}
-                className="rounded-2xl bg-[#f6faf1] border border-black/5 p-6 sm:p-8 lg:p-10"
+                className="rounded-2xl bg-[#eef4e0] border border-black/5 p-6 sm:p-8 lg:p-10"
               >
                 <div className="flex items-start gap-4 sm:gap-5 flex-wrap">
                   <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-2xl bg-white shadow-card flex items-center justify-center shrink-0">

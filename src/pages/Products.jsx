@@ -41,7 +41,7 @@ export default function Products() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-80px" }}
                   transition={{ duration: 0.6 }}
-                  className="rounded-2xl bg-[#f6faf1] border border-black/5 p-6 sm:p-8 lg:p-12"
+                  className="rounded-2xl bg-[#eef4e0] border border-black/5 p-6 sm:p-8 lg:p-12"
                 >
                   <div className="grid md:grid-cols-5 gap-6 md:gap-8 lg:gap-10 items-center">
                     <div className={`md:col-span-3 ${reverse ? "md:order-2" : "md:order-1"}`}>

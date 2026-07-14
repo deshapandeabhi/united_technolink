@@ -74,7 +74,7 @@ export default function Expertise() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -16 }}
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  className="rounded-2xl bg-[#f6faf1] border border-black/5 p-6 sm:p-8 lg:p-12"
+                  className="rounded-2xl bg-[#eef4e0] border border-black/5 p-6 sm:p-8 lg:p-12"
                 >
                   <div className="flex items-start justify-between gap-6 flex-wrap">
                     <div>

@@ -39,7 +39,7 @@ export default function Contact() {
           <div className="grid md:grid-cols-5 gap-6 lg:gap-8">
             {/* Info column */}
             <div className="md:col-span-2 flex flex-col gap-5 sm:gap-6">
-              <div className="rounded-2xl bg-[#f6faf1] border border-black/5 p-6 sm:p-8">
+              <div className="rounded-2xl bg-[#eef4e0] border border-black/5 p-6 sm:p-8">
                 <h3 className="font-display font-semibold text-ink-900 text-lg">Drop by!</h3>
                 <div className="mt-5 sm:mt-6 flex flex-col gap-5 sm:gap-6">
                   <div className="flex gap-4">
@@ -103,7 +103,7 @@ export default function Contact() {
 
             {/* Form column */}
             <div className="md:col-span-3">
-              <div className="rounded-2xl bg-[#f6faf1] border border-black/5 p-6 sm:p-8 lg:p-10">
+              <div className="rounded-2xl bg-[#eef4e0] border border-black/5 p-6 sm:p-8 lg:p-10">
                 {submitted ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.96 }}

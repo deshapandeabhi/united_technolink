@@ -295,7 +295,7 @@ export default function Home() {
       </section>
 
       {/* PARTNERS */}
-      <section className="py-16 sm:py-24 lg:py-28 bg-[#f6faf1] border-y border-black/5">
+      <section className="py-16 sm:py-24 lg:py-28 bg-[#eef4e0] border-y border-black/5">
         <Container>
           <div className="grid lg:grid-cols-2 gap-8 items-end mb-10 sm:mb-14">
             <div>
@@ -310,7 +310,7 @@ export default function Home() {
               products, expert support, and future-ready technologies.
             </p>
           </div>
-          <PartnerMarquee fadeColor="from-[#f6faf1]" />
+          <PartnerMarquee fadeColor="from-[#eef4e0]" />
         </Container>
       </section>
 
@@ -376,7 +376,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-[#f6faf1] px-6 py-12 sm:px-10 sm:py-16 lg:p-16">
+            <div className="bg-[#eef4e0] px-6 py-12 sm:px-10 sm:py-16 lg:p-16">
               <h2 className="font-display font-semibold text-ink-900 text-2xl sm:text-3xl tracking-tight">
                 Get Every Update!
               </h2>
