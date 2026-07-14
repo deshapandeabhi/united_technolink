@@ -5,9 +5,15 @@ import PageHero from "../components/PageHero";
 import { advancedTech } from "../data/content";
 import privateCloudImg from "../assets/advanced_tech_images/private-cloud.webp";
 import multiCloudImg from "../assets/advanced_tech_images/multi-cloud.webp";
+import hybridCloudImg from "../assets/advanced_tech_images/hybrid-cloud.webp";
+import turnkeyDeploymentImg from "../assets/advanced_tech_images/turnkey-deployment.webp";
 
-// Photos are only ready for some tiles so far — the rest fall back to icon placeholders.
-const cloudTileImages = { "Private Cloud": privateCloudImg, "Multi-Cloud": multiCloudImg };
+const cloudTileImages = {
+  "Private Cloud": privateCloudImg,
+  "Multi-Cloud": multiCloudImg,
+  "Hybrid Cloud": hybridCloudImg,
+  "Turnkey Deployments": turnkeyDeploymentImg,
+};
 
 export default function AdvancedTechnologies() {
   return (
@@ -101,27 +107,13 @@ export default function AdvancedTechnologies() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="grid grid-cols-2 gap-3.5 sm:gap-4"
             >
-              {["Private Cloud", "Hybrid Cloud", "Multi-Cloud", "Turnkey Deployments"].map((c) => {
-                const photo = cloudTileImages[c];
-                return (
-                  <div key={c} className="relative rounded-2xl overflow-hidden aspect-square border border-white/20">
-                    {photo ? (
-                      <>
-                        <img src={photo} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-ink-950/10 to-transparent" />
-                        <span className="absolute bottom-3 sm:bottom-4 inset-x-3 sm:inset-x-4 text-xs sm:text-sm font-medium text-white">{c}</span>
-                      </>
-                    ) : (
-                      <div className="h-full w-full bg-white/10 p-4 sm:p-6 flex flex-col justify-between hover:bg-white/15 transition-colors">
-                        <div className="h-8 w-8 sm:h-9 sm:w-9 rounded-lg bg-white/20 flex items-center justify-center">
-                          <Cloud className="h-4 w-4 sm:h-4.5 sm:w-4.5 text-white" />
-                        </div>
-                        <span className="text-xs sm:text-sm font-medium text-white">{c}</span>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+              {["Private Cloud", "Hybrid Cloud", "Multi-Cloud", "Turnkey Deployments"].map((c) => (
+                <div key={c} className="relative rounded-2xl overflow-hidden aspect-square border border-white/20">
+                  <img src={cloudTileImages[c]} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-ink-950/10 to-transparent" />
+                  <span className="absolute bottom-3 sm:bottom-4 inset-x-3 sm:inset-x-4 text-xs sm:text-sm font-medium text-white">{c}</span>
+                </div>
+              ))}
             </motion.div>
           </div>
         </Container>
