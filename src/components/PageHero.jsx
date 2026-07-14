@@ -4,7 +4,7 @@ export default function PageHero({ eyebrow, title, body }) {
   return (
     <section className="relative pt-28 pb-14 sm:pt-36 sm:pb-20 lg:pt-44 lg:pb-24 overflow-hidden bg-ink-950">
       <div className="absolute inset-0 line-pattern opacity-60" />
-      <div className="absolute -top-16 right-[8%] h-64 w-64 sm:h-80 sm:w-80 rounded-full bg-brand-500/20 blur-[100px]" />
+      <div className="absolute -top-16 right-[8%] h-64 w-64 sm:h-80 sm:w-80 rounded-full bg-brand-500/8 blur-[100px]" />
       <Container className="relative">
         <div className="flex justify-center">
           <Eyebrow light>{eyebrow}</Eyebrow>
