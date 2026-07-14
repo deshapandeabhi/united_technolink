@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-ink-950 min-h-[560px] sm:min-h-[620px] lg:min-h-[680px] flex flex-col justify-center">
+      <section className="relative isolate overflow-hidden bg-ink-950 min-h-[560px] sm:min-h-[620px] lg:min-h-[680px] flex flex-col justify-center">
         <HeroSlider>
           {(slide) => (
             <Container className="pt-24 sm:pt-28 lg:pt-32">

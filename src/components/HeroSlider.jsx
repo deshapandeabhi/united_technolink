@@ -51,7 +51,7 @@ export default function HeroSlider({ children }) {
   return (
     <>
       {/* Background layer — purely decorative, never affects section height */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-0">
         {slides.map((s, i) => (
           <motion.img
             key={s.image}
@@ -69,8 +69,9 @@ export default function HeroSlider({ children }) {
             }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-br from-ink-950/85 via-ink-950/75 to-brand-900/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-transparent to-ink-950/50" />
+        <div className="absolute inset-0 bg-ink-950/35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink-950/85 via-ink-950/45 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-transparent to-transparent" />
       </div>
 
       {/* Foreground text — normal flow, so the section grows to fit it, never clipped */}
