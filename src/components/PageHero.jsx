@@ -42,7 +42,7 @@ export default function PageHero({ eyebrow, title, body, images }) {
         <div className="flex justify-center">
           <Eyebrow light>{eyebrow}</Eyebrow>
         </div>
-        <h1 className="mt-5 sm:mt-6 text-center font-display font-semibold text-white text-3xl sm:text-5xl lg:text-6xl leading-[1.12] sm:leading-[1.08] tracking-tight max-w-4xl mx-auto">
+        <h1 className="mt-5 sm:mt-6 text-center font-display font-semibold text-white text-4xl sm:text-6xl lg:text-7xl leading-[1.12] sm:leading-[1.08] tracking-tight max-w-5xl mx-auto">
           {title}
         </h1>
         {body && (
