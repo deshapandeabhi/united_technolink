@@ -28,10 +28,10 @@ export default function Navbar() {
         scrolled ? "shadow-[0_1px_0_rgba(15,23,18,0.06),0_8px_24px_-12px_rgba(15,23,18,0.15)]" : "border-b border-black/5"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-5 lg:px-8 flex items-center justify-between h-18 py-3">
-        <Link to="/" className="flex items-center gap-2.5 shrink-0" onClick={() => setOpen(false)}>
-          <Logo className="h-10 w-10" />
-          <span className="font-display font-semibold tracking-tight text-ink-900 text-[15px] leading-tight sm:text-base">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8 flex items-center justify-between h-20 py-3">
+        <Link to="/" className="flex items-center gap-3 shrink-0" onClick={() => setOpen(false)}>
+          <Logo className="h-12 w-12 sm:h-14 sm:w-14" />
+          <span className="font-display font-semibold tracking-tight text-ink-900 text-lg leading-tight sm:text-xl">
             UNITED <span className="text-brand-600">TECHNOLINK</span>
           </span>
         </Link>
