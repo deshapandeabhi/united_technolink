@@ -22,20 +22,20 @@ export default function Home() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-ink-950 min-h-[600px] sm:min-h-[680px] lg:min-h-[760px]">
+      <section className="relative overflow-hidden bg-ink-950 min-h-[560px] sm:min-h-[620px] lg:min-h-[680px] flex flex-col justify-center">
         <HeroSlider>
           {(slide) => (
-            <Container className="relative h-full flex flex-col justify-center pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-[7.5rem] lg:pb-24">
+            <Container className="pt-24 sm:pt-28 lg:pt-32">
               <span className="inline-block text-brand-300 text-sm font-semibold uppercase tracking-widest">
                 {slide.eyebrow}
               </span>
-              <h1 className="mt-4 font-display font-semibold text-white text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] leading-[1.08] tracking-tight max-w-3xl">
+              <h1 className="mt-4 font-display font-semibold text-white text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] leading-[1.15] sm:leading-[1.08] tracking-tight max-w-3xl">
                 {slide.title}
               </h1>
-              <p className="mt-6 text-white/75 text-base sm:text-lg max-w-xl leading-relaxed">
+              <p className="mt-5 sm:mt-6 text-white/75 text-base sm:text-lg max-w-xl leading-relaxed">
                 {slide.body}
               </p>
-              <div className="mt-9 flex flex-col sm:flex-row gap-3.5 sm:gap-4">
+              <div className="mt-8 sm:mt-9 flex flex-col sm:flex-row gap-3.5 sm:gap-4">
                 <PrimaryButton to="/contact" className="w-full sm:w-auto justify-center">Get a Consultation</PrimaryButton>
                 <SecondaryButton to="/expertise" light className="w-full sm:w-auto justify-center">Explore Our Expertise</SecondaryButton>
               </div>
