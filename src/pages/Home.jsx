@@ -12,11 +12,20 @@ import HeroSlider from "../components/HeroSlider";
 import {
   stats, whyChooseUs, valueProps, processSteps, homeFeatureCards,
 } from "../data/content";
+import itConsultingImg from "../assets/home_images/it-consulting.jpg";
+import processPlanningImg from "../assets/home_images/process-planning.jpg";
+import cloudFeatureImg from "../assets/home_images/cloud-feature.webp";
+import tileCablingImg from "../assets/home_images/tile-cabling.jpg";
+import tileSecurityImg from "../assets/home_images/tile-security.jpg";
 
 const iconMap = {
   Sparkles, Handshake, BadgeCheck, TrendingUp, Layers, Network, ShieldCheck,
   Server, Cloud, SearchCheck, ClipboardList, LifeBuoy, Award,
 };
+
+// Photos are only ready for some cards/tiles so far — the rest fall back to icon placeholders.
+const homeFeatureCardImages = [null, null, cloudFeatureImg];
+const montageTileImages = { "Structured Cabling": tileCablingImg, "Network Security": tileSecurityImg };
 
 export default function Home() {
   return (
@@ -72,7 +81,8 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="order-2 md:order-1 relative rounded-2xl overflow-hidden bg-ink-950 aspect-[4/3] p-7 sm:p-9 flex flex-col justify-center"
             >
-              <div className="absolute inset-0 line-pattern opacity-40" />
+              <img src={itConsultingImg} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/75 to-ink-950/40" />
               <div className="relative">
                 <p className="text-white font-display font-semibold text-xl sm:text-2xl leading-snug">
                   Driving Innovation in<br />IT &amp; Integration
@@ -163,12 +173,25 @@ export default function Home() {
               { icon: Network, label: "Structured Cabling" },
               { icon: ShieldCheck, label: "Network Security" },
               { icon: Cloud, label: "Cloud Integration" },
-            ].map((item) => (
-              <div key={item.label} className="rounded-xl bg-white/10 border border-white/15 aspect-square flex flex-col items-center justify-center gap-2.5 text-center p-3">
-                <item.icon className="h-7 w-7 sm:h-8 sm:w-8 text-white" />
-                <span className="text-xs sm:text-sm font-medium text-white/90">{item.label}</span>
-              </div>
-            ))}
+            ].map((item) => {
+              const photo = montageTileImages[item.label];
+              return (
+                <div key={item.label} className="relative rounded-xl overflow-hidden aspect-square border border-white/15">
+                  {photo ? (
+                    <>
+                      <img src={photo} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-ink-950/10 to-transparent" />
+                      <span className="absolute bottom-2.5 inset-x-2.5 text-xs sm:text-sm font-medium text-white text-center">{item.label}</span>
+                    </>
+                  ) : (
+                    <div className="h-full w-full bg-white/10 flex flex-col items-center justify-center gap-2.5 text-center p-3">
+                      <item.icon className="h-7 w-7 sm:h-8 sm:w-8 text-white" />
+                      <span className="text-xs sm:text-sm font-medium text-white/90">{item.label}</span>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </motion.div>
         </Container>
       </section>
@@ -180,6 +203,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {homeFeatureCards.map((c, i) => {
               const Icon = iconMap[c.icon] || Server;
+              const photo = homeFeatureCardImages[i];
               return (
                 <motion.div
                   key={c.title}
@@ -187,8 +211,14 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
                 >
                   <div className="rounded-2xl overflow-hidden aspect-[16/10] mb-5 bg-ink-950 flex items-center justify-center relative">
-                    <div className="absolute inset-0 line-pattern opacity-40" />
-                    <Icon className="h-14 w-14 text-brand-400 relative" />
+                    {photo ? (
+                      <img src={photo} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                    ) : (
+                      <>
+                        <div className="absolute inset-0 line-pattern opacity-40" />
+                        <Icon className="h-14 w-14 text-brand-400 relative" />
+                      </>
+                    )}
                   </div>
                   <Icon className="h-7 w-7 text-white" />
                   <h3 className="mt-4 font-display font-semibold text-white text-lg sm:text-xl leading-snug">
@@ -220,19 +250,10 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6 }}
-              className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-brand-500 to-brand-700 h-72 sm:h-96 lg:h-full min-h-[22rem] flex flex-col items-center justify-center gap-6 p-8"
+              className="relative rounded-2xl overflow-hidden h-72 sm:h-96 lg:h-full min-h-[22rem]"
             >
-              <div className="absolute inset-0 line-pattern opacity-25" />
-              <div className="relative flex flex-col items-center gap-3">
-                {processSteps.map((s, i) => (
-                  <div key={s.title} className="flex items-center gap-3 w-full max-w-[220px]">
-                    <span className="h-9 w-9 rounded-full bg-white/15 border border-white/30 flex items-center justify-center text-white font-display font-semibold text-sm shrink-0">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="text-white/95 text-sm font-medium">{s.title}</span>
-                  </div>
-                ))}
-              </div>
+              <img src={processPlanningImg} alt="Team collaborating on IT strategy and planning" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-950/50 via-transparent to-transparent" />
             </motion.div>
 
             <motion.div
