@@ -205,7 +205,7 @@ export default function Home() {
       </section>
 
       {/* FEATURE CARDS ON BRAND GREEN */}
-      <section className="py-16 sm:py-24 lg:py-28 bg-brand-600 relative overflow-hidden">
+      <section className="py-16 sm:py-24 lg:py-28 bg-brand-500 relative overflow-hidden">
         <div className="absolute inset-0 line-pattern opacity-20" />
         <Container className="relative">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
