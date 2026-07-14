@@ -4,9 +4,15 @@ import { MapPin, Mail, Phone, Clock, Send, CheckCircle2, Building2 } from "lucid
 import { Container } from "../components/UI";
 import PageHero from "../components/PageHero";
 import { contact } from "../data/content";
+import contactCloudOfficeImg from "../assets/page_hero_images/contact-cloud-office.webp";
+import contactSecurityShieldImg from "../assets/page_hero_images/contact-security-shield.webp";
+import contactCloudNetworkImg from "../assets/page_hero_images/contact-cloud-network.webp";
+import contactCybersecurityImg from "../assets/page_hero_images/contact-cybersecurity-collage.webp";
 
 const inputClasses =
   "w-full rounded-xl bg-white border border-black/10 px-4 py-3 text-sm text-ink-900 placeholder:text-ink-500/60 focus:outline-none focus:border-brand-500/60 focus:ring-2 focus:ring-brand-500/15 transition-all";
+
+const heroImages = [contactCloudOfficeImg, contactSecurityShieldImg, contactCloudNetworkImg, contactCybersecurityImg];
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -25,6 +31,7 @@ export default function Contact() {
         eyebrow="Contact Us"
         title="Let's build your future-ready IT environment"
         body="Delivering exceptional service, lasting partnerships, and IT solutions tailored to your business. Reach out and our certified experts will get back to you."
+        images={heroImages}
       />
 
       <section className="py-12 sm:py-20 lg:py-24 bg-white">
