@@ -15,17 +15,25 @@ import {
 import itConsultingImg from "../assets/home_images/it-consulting.jpg";
 import processPlanningImg from "../assets/home_images/process-planning.jpg";
 import cloudFeatureImg from "../assets/home_images/cloud-feature.webp";
+import datacenterFeatureImg from "../assets/home_images/datacenter-feature.jpg";
+import networkSecurityFeatureImg from "../assets/home_images/network-security-feature.jpg";
 import tileCablingImg from "../assets/home_images/tile-cabling.jpg";
 import tileSecurityImg from "../assets/home_images/tile-security.jpg";
+import tileHardwareImg from "../assets/home_images/tile-hardware.jpg";
+import tileCloudImg from "../assets/home_images/tile-cloud.jpg";
 
 const iconMap = {
   Sparkles, Handshake, BadgeCheck, TrendingUp, Layers, Network, ShieldCheck,
   Server, Cloud, SearchCheck, ClipboardList, LifeBuoy, Award,
 };
 
-// Photos are only ready for some cards/tiles so far — the rest fall back to icon placeholders.
-const homeFeatureCardImages = [null, null, cloudFeatureImg];
-const montageTileImages = { "Structured Cabling": tileCablingImg, "Network Security": tileSecurityImg };
+const homeFeatureCardImages = [datacenterFeatureImg, networkSecurityFeatureImg, cloudFeatureImg];
+const montageTileImages = {
+  "Enterprise Hardware": tileHardwareImg,
+  "Structured Cabling": tileCablingImg,
+  "Network Security": tileSecurityImg,
+  "Cloud Integration": tileCloudImg,
+};
 
 export default function Home() {
   return (
