@@ -121,13 +121,12 @@ export default function AdvancedTechnologies() {
 
       <section className="py-16 sm:py-20 lg:py-28 bg-white">
         <Container>
-          <div className="relative rounded-2xl overflow-hidden bg-ink-950 px-6 py-12 sm:px-12 sm:py-14 lg:px-16 lg:py-16 text-center">
-            <div className="absolute inset-0 line-pattern opacity-40" />
+          <div className="relative rounded-2xl overflow-hidden bg-brand-100 px-6 py-12 sm:px-12 sm:py-14 lg:px-16 lg:py-16 text-center">
             <div className="relative">
-              <h2 className="font-display font-semibold text-white text-xl sm:text-3xl tracking-tight max-w-2xl mx-auto">
+              <h2 className="font-display font-semibold text-ink-900 text-xl sm:text-3xl tracking-tight max-w-2xl mx-auto">
                 Not sure which platform fits your workloads?
               </h2>
-              <p className="mt-4 text-white/70 max-w-xl mx-auto">
+              <p className="mt-4 text-[#5b6b60] max-w-xl mx-auto">
                 Our engineers will map your requirements to the right ThinkAgile configuration.
               </p>
               <div className="mt-7 sm:mt-8 flex justify-center">

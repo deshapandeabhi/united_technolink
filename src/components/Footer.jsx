@@ -33,15 +33,15 @@ export default function Footer() {
   const [subscribed, setSubscribed] = useState(false);
 
   return (
-    <footer className="bg-ink-950">
+    <footer className="bg-brand-100">
       {/* Newsletter bar */}
-      <div className="border-b border-white/10">
+      <div className="border-b border-ink-900/10">
         <div className="mx-auto max-w-7xl px-5 lg:px-8 py-10 flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="text-center lg:text-left">
-            <h3 className="font-display font-semibold text-white text-xl sm:text-2xl">
+            <h3 className="font-display font-semibold text-ink-900 text-xl sm:text-2xl">
               Stay Ahead with United Technolink Pvt. Ltd
             </h3>
-            <p className="mt-1.5 text-sm text-white/50 max-w-md">
+            <p className="mt-1.5 text-sm text-[#5b6b60] max-w-md">
               Get insights on IT infrastructure trends, security best practices, and exclusive updates delivered to your inbox.
             </p>
           </div>
@@ -50,20 +50,20 @@ export default function Footer() {
             className="w-full lg:w-auto flex flex-col sm:flex-row items-stretch gap-3"
           >
             {subscribed ? (
-              <p className="text-brand-400 text-sm font-medium py-3">Thanks — you're subscribed!</p>
+              <p className="text-brand-700 text-sm font-medium py-3">Thanks — you're subscribed!</p>
             ) : (
               <>
                 <div className="relative">
-                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-white/40" />
+                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-ink-500/60" />
                   <input
                     required type="email" value={email} onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your work email"
-                    className="w-full sm:w-72 rounded-full bg-white/5 border border-white/15 pl-11 pr-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-brand-400/60"
+                    className="w-full sm:w-72 rounded-full bg-white border border-black/10 pl-11 pr-4 py-3 text-sm text-ink-900 placeholder:text-ink-500/60 focus:outline-none focus:border-brand-500/60"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-1.5 rounded-full bg-brand-500 hover:bg-brand-400 transition-colors text-white px-6 py-3 text-sm font-semibold"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-full bg-brand-500 hover:bg-brand-600 transition-colors text-white px-6 py-3 text-sm font-semibold"
                 >
                   Subscribe
                   <Send className="h-4 w-4" />
@@ -79,11 +79,11 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2.5">
               <Logo className="h-10 w-10" />
-              <span className="font-display font-semibold tracking-tight text-white text-base">
-                UNITED <span className="text-brand-400">TECHNOLINK</span>
+              <span className="font-display font-semibold tracking-tight text-ink-900 text-base">
+                UNITED <span className="text-brand-600">TECHNOLINK</span>
               </span>
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-white/50 max-w-xs">
+            <p className="mt-4 text-sm leading-relaxed text-[#5b6b60] max-w-xs">
               End-to-end IT infrastructure, networking, cybersecurity, cloud and digital
               workplace solutions — secure, scalable, and future-ready.
             </p>
@@ -92,7 +92,7 @@ export default function Footer() {
                 <a
                   key={i}
                   href="#"
-                  className="h-9 w-9 rounded-full border border-white/15 flex items-center justify-center text-white/60 hover:text-brand-400 hover:border-brand-400/50 transition-colors"
+                  className="h-9 w-9 rounded-full border border-ink-900/15 flex items-center justify-center text-ink-700/70 hover:text-brand-600 hover:border-brand-500/50 transition-colors"
                   aria-label="social link"
                 >
                   <Icon className="h-4 w-4" />
@@ -102,11 +102,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-display font-medium text-sm tracking-wide uppercase mb-4 border-b-2 border-brand-500 inline-block pb-2">Quick Links</h4>
+            <h4 className="text-ink-900 font-display font-medium text-sm tracking-wide uppercase mb-4 border-b-2 border-brand-500 inline-block pb-2">Quick Links</h4>
             <ul className="space-y-3 mt-1">
               {quickLinks.map((l) => (
                 <li key={l.to}>
-                  <Link to={l.to} className="text-sm text-white/55 hover:text-brand-400 transition-colors">
+                  <Link to={l.to} className="text-sm text-[#5b6b60] hover:text-brand-600 transition-colors">
                     {l.label}
                   </Link>
                 </li>
@@ -115,11 +115,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-display font-medium text-sm tracking-wide uppercase mb-4 border-b-2 border-brand-500 inline-block pb-2">Services</h4>
+            <h4 className="text-ink-900 font-display font-medium text-sm tracking-wide uppercase mb-4 border-b-2 border-brand-500 inline-block pb-2">Services</h4>
             <ul className="space-y-3 mt-1">
               {services.map((s) => (
                 <li key={s}>
-                  <Link to="/expertise" className="text-sm text-white/55 hover:text-brand-400 transition-colors">
+                  <Link to="/expertise" className="text-sm text-[#5b6b60] hover:text-brand-600 transition-colors">
                     {s}
                   </Link>
                 </li>
@@ -128,11 +128,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-display font-medium text-sm tracking-wide uppercase mb-4 border-b-2 border-brand-500 inline-block pb-2">Products</h4>
+            <h4 className="text-ink-900 font-display font-medium text-sm tracking-wide uppercase mb-4 border-b-2 border-brand-500 inline-block pb-2">Products</h4>
             <ul className="space-y-3 mt-1">
               {products.map((p) => (
                 <li key={p}>
-                  <Link to="/products" className="text-sm text-white/55 hover:text-brand-400 transition-colors">
+                  <Link to="/products" className="text-sm text-[#5b6b60] hover:text-brand-600 transition-colors">
                     {p}
                   </Link>
                 </li>
@@ -141,35 +141,35 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-display font-medium text-sm tracking-wide uppercase mb-4 border-b-2 border-brand-500 inline-block pb-2">Contact</h4>
+            <h4 className="text-ink-900 font-display font-medium text-sm tracking-wide uppercase mb-4 border-b-2 border-brand-500 inline-block pb-2">Contact</h4>
             <ul className="space-y-4 mt-1">
-              <li className="flex gap-3 text-sm text-white/55 min-w-0">
-                <Phone className="h-4.5 w-4.5 text-brand-400 shrink-0 mt-0.5" />
+              <li className="flex gap-3 text-sm text-[#5b6b60] min-w-0">
+                <Phone className="h-4.5 w-4.5 text-brand-600 shrink-0 mt-0.5" />
                 <span className="break-words min-w-0">+91 99023 90015</span>
               </li>
-              <li className="flex gap-3 text-sm text-white/55 min-w-0">
-                <Mail className="h-4.5 w-4.5 text-brand-400 shrink-0 mt-0.5" />
+              <li className="flex gap-3 text-sm text-[#5b6b60] min-w-0">
+                <Mail className="h-4.5 w-4.5 text-brand-600 shrink-0 mt-0.5" />
                 <span className="break-words min-w-0">info@unitedtechnolink.com</span>
               </li>
-              <li className="flex gap-3 text-sm text-white/55 min-w-0">
-                <MapPin className="h-4.5 w-4.5 text-brand-400 shrink-0 mt-0.5" />
+              <li className="flex gap-3 text-sm text-[#5b6b60] min-w-0">
+                <MapPin className="h-4.5 w-4.5 text-brand-600 shrink-0 mt-0.5" />
                 <span className="break-words min-w-0">{contact.address}</span>
               </li>
             </ul>
             <Link
               to="/contact"
-              className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400 hover:text-brand-300"
+              className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-700"
             >
               Talk to an expert <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-          <p className="text-xs text-white/40">
+        <div className="mt-12 pt-8 border-t border-ink-900/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <p className="text-xs text-ink-500/80">
             © {new Date().getFullYear()} {contact.legalName}. All rights reserved. GSTIN: {contact.gst}
           </p>
-          <p className="text-xs text-white/40">
+          <p className="text-xs text-ink-500/80">
             Trusted by enterprises, SMEs, education, healthcare & government.
           </p>
         </div>
