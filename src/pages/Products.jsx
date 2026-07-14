@@ -4,8 +4,12 @@ import { Container, PrimaryButton } from "../components/UI";
 import PageHero from "../components/PageHero";
 import { products } from "../data/content";
 import PartnerMarquee from "../components/PartnerMarquee";
+import productsServersImg from "../assets/page_hero_images/products-servers.webp";
+import productsNetworkImg from "../assets/page_hero_images/products-network-switches.webp";
+import productsFiberImg from "../assets/page_hero_images/products-fiber-optic.webp";
 
 const iconMap = { Laptop, HardDrive, Radio, ShieldCheck, Lock };
+const heroImages = [productsServersImg, productsNetworkImg, productsFiberImg];
 
 export default function Products() {
   return (
@@ -14,6 +18,7 @@ export default function Products() {
         eyebrow="Products"
         title="Industry-leading IT hardware & infrastructure, under one roof"
         body="United Technolink Pvt. Ltd brings together industry-leading IT hardware solutions and comprehensive infrastructure services to address the evolving technology needs of modern businesses — backed by over a decade of expertise in system integration and distribution of world-class IT products."
+        images={heroImages}
       />
 
       <section className="py-8 sm:py-10 bg-white border-b border-black/5">

@@ -7,6 +7,9 @@ import privateCloudImg from "../assets/advanced_tech_images/private-cloud.webp";
 import multiCloudImg from "../assets/advanced_tech_images/multi-cloud.webp";
 import hybridCloudImg from "../assets/advanced_tech_images/hybrid-cloud.webp";
 import turnkeyDeploymentImg from "../assets/advanced_tech_images/turnkey-deployment.webp";
+import neuralNetworkImg from "../assets/page_hero_images/advtech-neural-network.webp";
+import smartCityImg from "../assets/page_hero_images/advtech-smart-city.webp";
+import aiInterfaceImg from "../assets/page_hero_images/advtech-ai-interface.webp";
 
 const cloudTileImages = {
   "Private Cloud": privateCloudImg,
@@ -14,6 +17,7 @@ const cloudTileImages = {
   "Hybrid Cloud": hybridCloudImg,
   "Turnkey Deployments": turnkeyDeploymentImg,
 };
+const heroImages = [neuralNetworkImg, smartCityImg, aiInterfaceImg];
 
 export default function AdvancedTechnologies() {
   return (
@@ -22,6 +26,7 @@ export default function AdvancedTechnologies() {
         eyebrow="Advanced Technologies"
         title="Powered by Lenovo ThinkAgile — hyperconverged infrastructure, simplified"
         body="Modernize your infrastructure with pre-validated, factory-configured platforms engineered for rapid deployment, reduced management overhead, and future-ready scalability."
+        images={heroImages}
       />
 
       <section className="py-12 sm:py-20 lg:py-24 bg-white">

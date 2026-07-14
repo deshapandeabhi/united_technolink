@@ -7,8 +7,12 @@ import {
 import { Container, PrimaryButton } from "../components/UI";
 import PageHero from "../components/PageHero";
 import { expertise } from "../data/content";
+import expertiseGlobeImg from "../assets/page_hero_images/expertise-global-network.webp";
+import expertiseShieldImg from "../assets/page_hero_images/expertise-cybersecurity-shield.webp";
+import expertiseAiCloudImg from "../assets/page_hero_images/expertise-ai-cloud.webp";
 
 const iconMap = { Server, Database, ShieldCheck, Cable, Wifi, Boxes, LifeBuoy, Cpu };
+const heroImages = [expertiseGlobeImg, expertiseShieldImg, expertiseAiCloudImg];
 
 export default function Expertise() {
   const [active, setActive] = useState(expertise[0].id);
@@ -21,6 +25,7 @@ export default function Expertise() {
         eyebrow="Our Expertise"
         title="Deep domain expertise across the full IT infrastructure stack"
         body="From datacenter and storage to networking, virtualization, and enterprise security — our certified professionals deliver industry best practices to solve complex business challenges."
+        images={heroImages}
       />
 
       <section className="py-12 sm:py-20 lg:py-28 bg-white">
