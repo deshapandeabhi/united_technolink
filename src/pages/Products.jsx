@@ -57,14 +57,14 @@ export default function Products() {
                       <p className="mt-3.5 sm:mt-4 text-[#5b6b60] leading-relaxed max-w-xl">{p.body}</p>
                     </div>
                     <div className={`md:col-span-2 ${reverse ? "md:order-1" : "md:order-2"}`}>
-                      <div className="rounded-2xl bg-white border border-black/5 p-5 sm:p-6 shadow-card">
-                        <p className="text-xs font-semibold uppercase tracking-widest text-ink-500 mb-3.5 sm:mb-4">
+                      <div className="rounded-2xl bg-brand-500 border border-black/5 p-5 sm:p-6 shadow-card">
+                        <p className="text-xs font-semibold uppercase tracking-widest text-white/80 mb-3.5 sm:mb-4">
                           Capabilities
                         </p>
                         <ul className="space-y-2.5 sm:space-y-3">
                           {p.tags.map((t) => (
-                            <li key={t} className="flex items-center gap-2.5 text-sm text-ink-800">
-                              <CheckCircle2 className="h-4.5 w-4.5 text-brand-500 shrink-0" />
+                            <li key={t} className="flex items-center gap-2.5 text-sm text-white">
+                              <CheckCircle2 className="h-4.5 w-4.5 text-ink-900 shrink-0" />
                               {t}
                             </li>
                           ))}
