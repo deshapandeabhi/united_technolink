@@ -17,13 +17,13 @@
   --color-brand-800: #40611f;
   --color-brand-900: #344e1a;
 
-  /* Dark navy — footer / CTA banner / hero sections */
-  --color-ink-950: #0f2745;
-  --color-ink-900: #163457;
-  --color-ink-800: #1e4269;
-  --color-ink-700: #29537d;
-  --color-ink-600: #3d6c98;
-  --color-ink-500: #5b87ad;
+  /* Navy — footer / CTA banner / hero sections (lighter than the original dark navy) */
+  --color-ink-950: #1d4166;
+  --color-ink-900: #244d76;
+  --color-ink-800: #2e5c88;
+  --color-ink-700: #3d70a0;
+  --color-ink-600: #5188b8;
+  --color-ink-500: #74a4cd;
 
   --shadow-glow: 0 16px 40px -12px rgba(104,154,47,0.35);
   --shadow-card: 0 1px 2px rgba(15,23,18,0.04), 0 8px 24px -8px rgba(15,23,18,0.10);
