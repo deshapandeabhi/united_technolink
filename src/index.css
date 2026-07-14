@@ -17,13 +17,13 @@
   --color-brand-800: #40611f;
   --color-brand-900: #344e1a;
 
-  /* Dark forest green — headings / photo-overlay scrims */
-  --color-ink-950: #14260f;
-  --color-ink-900: #1c3315;
-  --color-ink-800: #26421d;
-  --color-ink-700: #33542a;
-  --color-ink-600: #4a6d3d;
-  --color-ink-500: #6c8a5c;
+  /* Dark navy — footer / CTA banner / hero sections */
+  --color-ink-950: #0f2745;
+  --color-ink-900: #163457;
+  --color-ink-800: #1e4269;
+  --color-ink-700: #29537d;
+  --color-ink-600: #3d6c98;
+  --color-ink-500: #5b87ad;
 
   --shadow-glow: 0 16px 40px -12px rgba(104,154,47,0.35);
   --shadow-card: 0 1px 2px rgba(15,23,18,0.04), 0 8px 24px -8px rgba(15,23,18,0.10);

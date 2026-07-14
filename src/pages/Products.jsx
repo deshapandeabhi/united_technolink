@@ -73,13 +73,14 @@ export default function Products() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-28 bg-brand-100 relative overflow-hidden">
+      <section className="py-16 sm:py-20 lg:py-28 bg-ink-950 relative overflow-hidden">
+        <div className="absolute inset-0 line-pattern opacity-40" />
         <Container className="relative">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="font-display font-semibold text-ink-900 text-xl sm:text-3xl tracking-tight">
+            <h2 className="font-display font-semibold text-white text-xl sm:text-3xl tracking-tight">
               Need help choosing the right hardware for your business?
             </h2>
-            <p className="mt-4 text-[#5b6b60]">
+            <p className="mt-4 text-white/70">
               Our certified experts will assess your requirements and recommend a tailored solution.
             </p>
             <div className="mt-7 sm:mt-8 flex justify-center">

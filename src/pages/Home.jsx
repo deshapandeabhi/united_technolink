@@ -315,20 +315,20 @@ export default function Home() {
       </section>
 
       {/* CALL BANNER */}
-      <section className="bg-brand-100 relative overflow-hidden">
+      <section className="bg-ink-950 relative overflow-hidden">
         <Container className="relative py-14 sm:py-20">
           <div className="grid sm:grid-cols-[1fr_auto] gap-10 items-center">
             <div>
-              <p className="text-brand-700 text-sm font-semibold uppercase tracking-widest">Call Us</p>
-              <a href="tel:+919902390015" className="mt-2 block font-display font-semibold text-ink-900 text-3xl sm:text-4xl lg:text-5xl tracking-tight hover:text-brand-600 transition-colors">
+              <p className="text-white/60 text-sm font-semibold uppercase tracking-widest">Call Us</p>
+              <a href="tel:+919902390015" className="mt-2 block font-display font-semibold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight hover:text-brand-400 transition-colors">
                 +91 99023 90015
               </a>
-              <p className="mt-4 text-[#5b6b60] max-w-lg leading-relaxed">
+              <p className="mt-4 text-white/60 max-w-lg leading-relaxed">
                 Our proficient team of IT and infrastructure engineers are ready to assist you
                 around the clock. We are just one call away from you.
               </p>
               <div className="mt-7">
-                <Link to="/contact" className="inline-flex items-center justify-center rounded-full bg-ink-900 text-white px-7 py-3.5 text-sm font-semibold hover:bg-ink-800 transition-colors">
+                <Link to="/contact" className="inline-flex items-center justify-center rounded-full bg-white text-ink-950 px-7 py-3.5 text-sm font-semibold hover:bg-brand-50 transition-colors">
                   Let's Talk
                 </Link>
               </div>
