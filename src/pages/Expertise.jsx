@@ -10,9 +10,10 @@ import { expertise } from "../data/content";
 import expertiseGlobeImg from "../assets/page_hero_images/expertise-global-network.webp";
 import expertiseShieldImg from "../assets/page_hero_images/expertise-cybersecurity-shield.webp";
 import expertiseAiCloudImg from "../assets/page_hero_images/expertise-ai-cloud.webp";
+import expertiseHexNetworkImg from "../assets/page_hero_images/expertise-hex-network.webp";
 
 const iconMap = { Server, Database, ShieldCheck, Cable, Wifi, Boxes, LifeBuoy, Cpu };
-const heroImages = [expertiseGlobeImg, expertiseShieldImg, expertiseAiCloudImg];
+const heroImages = [expertiseGlobeImg, expertiseShieldImg, expertiseAiCloudImg, expertiseHexNetworkImg];
 
 export default function Expertise() {
   const [active, setActive] = useState(expertise[0].id);

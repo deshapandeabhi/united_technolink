@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Container, Eyebrow } from "./UI";
 
-const SLIDE_DURATION = 6000;
+const SLIDE_DURATION = 4000;
 
 export default function PageHero({ eyebrow, title, body, images }) {
   const hasPhotos = Array.isArray(images) && images.length > 0;

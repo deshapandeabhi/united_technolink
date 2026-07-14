@@ -10,6 +10,7 @@ import turnkeyDeploymentImg from "../assets/advanced_tech_images/turnkey-deploym
 import neuralNetworkImg from "../assets/page_hero_images/advtech-neural-network.webp";
 import smartCityImg from "../assets/page_hero_images/advtech-smart-city.webp";
 import aiInterfaceImg from "../assets/page_hero_images/advtech-ai-interface.webp";
+import quantumCrystalImg from "../assets/page_hero_images/advtech-quantum-crystal.webp";
 
 const cloudTileImages = {
   "Private Cloud": privateCloudImg,
@@ -17,7 +18,7 @@ const cloudTileImages = {
   "Hybrid Cloud": hybridCloudImg,
   "Turnkey Deployments": turnkeyDeploymentImg,
 };
-const heroImages = [neuralNetworkImg, smartCityImg, aiInterfaceImg];
+const heroImages = [neuralNetworkImg, smartCityImg, aiInterfaceImg, quantumCrystalImg];
 
 export default function AdvancedTechnologies() {
   return (

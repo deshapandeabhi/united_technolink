@@ -7,9 +7,10 @@ import PartnerMarquee from "../components/PartnerMarquee";
 import productsServersImg from "../assets/page_hero_images/products-servers.webp";
 import productsNetworkImg from "../assets/page_hero_images/products-network-switches.webp";
 import productsFiberImg from "../assets/page_hero_images/products-fiber-optic.webp";
+import productsCloudCityImg from "../assets/page_hero_images/products-cloud-cityscape.webp";
 
 const iconMap = { Laptop, HardDrive, Radio, ShieldCheck, Lock };
-const heroImages = [productsServersImg, productsNetworkImg, productsFiberImg];
+const heroImages = [productsServersImg, productsNetworkImg, productsFiberImg, productsCloudCityImg];
 
 export default function Products() {
   return (
