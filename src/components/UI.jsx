@@ -8,13 +8,13 @@ export function Container({ className = "", children }) {
 export function Eyebrow({ children, light = false }) {
   return (
     <span
-      className={`inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-widest ${
+      className={`inline-flex items-center gap-2 rounded-full border px-5 py-2 text-sm sm:text-base font-semibold uppercase tracking-widest ${
         light
           ? "border-white/25 bg-white/10 text-white"
           : "border-brand-500/25 bg-brand-50 text-brand-700"
       }`}
     >
-      <span className={`h-1.5 w-1.5 rounded-full ${light ? "bg-white" : "bg-brand-500"}`} />
+      <span className={`h-2 w-2 rounded-full ${light ? "bg-white" : "bg-brand-500"}`} />
       {children}
     </span>
   );
