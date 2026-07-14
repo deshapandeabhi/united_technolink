@@ -39,7 +39,7 @@ export default function Footer() {
         <div className="mx-auto max-w-7xl px-5 lg:px-8 py-10 flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="text-center lg:text-left">
             <h3 className="font-display font-semibold text-white text-xl sm:text-2xl">
-              Stay Ahead with United Technolink
+              Stay Ahead with United Technolink Pvt. Ltd
             </h3>
             <p className="mt-1.5 text-sm text-white/50 max-w-md">
               Get insights on IT infrastructure trends, security best practices, and exclusive updates delivered to your inbox.
@@ -145,7 +145,7 @@ export default function Footer() {
             <ul className="space-y-4 mt-1">
               <li className="flex gap-3 text-sm text-white/55 min-w-0">
                 <Phone className="h-4.5 w-4.5 text-brand-400 shrink-0 mt-0.5" />
-                <span className="break-words min-w-0">+91 80 0000 0000</span>
+                <span className="break-words min-w-0">+91 99023 90015</span>
               </li>
               <li className="flex gap-3 text-sm text-white/55 min-w-0">
                 <Mail className="h-4.5 w-4.5 text-brand-400 shrink-0 mt-0.5" />

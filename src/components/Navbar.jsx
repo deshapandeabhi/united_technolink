@@ -56,11 +56,11 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-5">
-          <a href="tel:+918000000000" className="flex items-center gap-2.5 text-ink-900">
+          <a href="tel:+919902390015" className="flex items-center gap-2.5 text-ink-900">
             <span className="h-9 w-9 rounded-full bg-brand-50 flex items-center justify-center">
               <Phone className="h-4 w-4 text-brand-600" />
             </span>
-            <span className="text-sm font-semibold">+91 80 0000 0000</span>
+            <span className="text-sm font-semibold">+91 99023 90015</span>
           </a>
           <Link
             to="/contact"
@@ -98,9 +98,9 @@ export default function Navbar() {
                 {l.label}
               </NavLink>
             ))}
-            <a href="tel:+918000000000" className="mt-2 flex items-center gap-2.5 px-4 py-2 text-ink-900">
+            <a href="tel:+919902390015" className="mt-2 flex items-center gap-2.5 px-4 py-2 text-ink-900">
               <Phone className="h-4 w-4 text-brand-600" />
-              <span className="text-sm font-semibold">+91 80 0000 0000</span>
+              <span className="text-sm font-semibold">+91 99023 90015</span>
             </a>
             <Link
               to="/contact"

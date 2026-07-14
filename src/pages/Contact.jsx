@@ -50,7 +50,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-ink-900">Call Us</p>
-                      <p className="mt-1 text-sm text-[#5b6b60]">+91 80 0000 0000</p>
+                      <p className="mt-1 text-sm text-[#5b6b60]">+91 99023 90015</p>
                     </div>
                   </div>
                   <div className="flex gap-4">
@@ -170,7 +170,7 @@ export default function Contact() {
                       <Send className="h-4 w-4" />
                     </button>
                     <p className="text-xs text-ink-500 text-center">
-                      By submitting, you agree to be contacted by United Technolink regarding your inquiry.
+                      By submitting, you agree to be contacted by United Technolink Pvt. Ltd regarding your inquiry.
                     </p>
                   </form>
                 )}

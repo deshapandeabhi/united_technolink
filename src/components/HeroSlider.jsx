@@ -16,7 +16,7 @@ const slides = [
     image: cloudSecurityImg,
     eyebrow: "Enterprise Security",
     title: "Secure, Scalable & Future-Ready IT Infrastructure",
-    body: "At United Technolink, we strive to build world-class strategy and deploy the best technology for your digital transformation — strengthening security across your enterprise.",
+    body: "At United Technolink Pvt. Ltd, we strive to build world-class strategy and deploy the best technology for your digital transformation — strengthening security across your enterprise.",
   },
   {
     image: globalCloudImg,

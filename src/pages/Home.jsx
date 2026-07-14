@@ -157,12 +157,12 @@ export default function Home() {
             <div>
               <div className="h-6 w-14 border-t-2 border-white/70 mb-4" />
               <h2 className="font-display font-semibold text-white text-2xl sm:text-3xl lg:text-4xl leading-[1.15] tracking-tight">
-                United Technolink Connects Businesses With Innovative Solutions, Ensuring Secure,
-                Scalable, And Future-Ready Digital Growth
+                United Technolink Pvt. Ltd Connects Businesses With Innovative Solutions, Ensuring
+                Secure, Scalable, And Future-Ready Digital Growth
               </h2>
             </div>
             <p className="text-white/85 leading-relaxed lg:pt-16">
-              United Technolink delivers next-generation infrastructure solutions designed to power
+              United Technolink Pvt. Ltd delivers next-generation infrastructure solutions designed to power
               agile, secure, and intelligent enterprises. Our expertise spans datacenter design,
               enterprise networking, cybersecurity, structured cabling, and cloud-ready IT
               environments — backed by strategic partnerships with Lenovo, HPE, HP, Aruba, Cisco,
@@ -273,7 +273,7 @@ export default function Home() {
                 Our Workflow: Delivering Excellence, Step By Step
               </h2>
               <p className="mt-5 text-[#5b6b60] leading-relaxed">
-                At United Technolink, we take pride in delivering solutions with precision, passion,
+                At United Technolink Pvt. Ltd, we take pride in delivering solutions with precision, passion,
                 and absolute reliability — combining technical expertise and a customer-first
                 approach to put our clients at the center of every solution we build.
               </p>
@@ -320,8 +320,8 @@ export default function Home() {
           <div className="grid sm:grid-cols-[1fr_auto] gap-10 items-center">
             <div>
               <p className="text-white/60 text-sm font-semibold uppercase tracking-widest">Call Us</p>
-              <a href="tel:+918000000000" className="mt-2 block font-display font-semibold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight hover:text-brand-400 transition-colors">
-                +91 80 0000 0000
+              <a href="tel:+919902390015" className="mt-2 block font-display font-semibold text-white text-3xl sm:text-4xl lg:text-5xl tracking-tight hover:text-brand-400 transition-colors">
+                +91 99023 90015
               </a>
               <p className="mt-4 text-white/60 max-w-lg leading-relaxed">
                 Our proficient team of IT and infrastructure engineers are ready to assist you

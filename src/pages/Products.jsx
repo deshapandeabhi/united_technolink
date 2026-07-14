@@ -13,7 +13,7 @@ export default function Products() {
       <PageHero
         eyebrow="Products"
         title="Industry-leading IT hardware & infrastructure, under one roof"
-        body="United Technolink brings together industry-leading IT hardware solutions and comprehensive infrastructure services to address the evolving technology needs of modern businesses — backed by over a decade of expertise in system integration and distribution of world-class IT products."
+        body="United Technolink Pvt. Ltd brings together industry-leading IT hardware solutions and comprehensive infrastructure services to address the evolving technology needs of modern businesses — backed by over a decade of expertise in system integration and distribution of world-class IT products."
       />
 
       <section className="py-8 sm:py-10 bg-white border-b border-black/5">

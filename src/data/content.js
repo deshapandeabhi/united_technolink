@@ -98,7 +98,7 @@ export const products = [
   {
     title: "Business Computing Solutions",
     tagline: "Power your business with the right compute",
-    body: "From laptops and workstations to enterprise servers, United Technolink delivers reliable, scalable technology designed to keep your business performing at its best.",
+    body: "From laptops and workstations to enterprise servers, United Technolink Pvt. Ltd delivers reliable, scalable technology designed to keep your business performing at its best.",
     icon: "Laptop",
     tags: ["Laptops", "Workstations", "Enterprise Servers"],
   },
@@ -182,7 +182,7 @@ export const expertise = [
     title: "Structured Cabling & Network Infrastructure",
     shortTitle: "Structured Cabling",
     tagline: "The backbone of every modern enterprise",
-    body: "United Technolink specializes in delivering high-performance voice, data, and fiber optic cabling solutions using industry-standard components — from new LAN deployments to infrastructure upgrades and expansion, executed with minimal disruption and complete transparency.",
+    body: "United Technolink Pvt. Ltd specializes in delivering high-performance voice, data, and fiber optic cabling solutions using industry-standard components — from new LAN deployments to infrastructure upgrades and expansion, executed with minimal disruption and complete transparency.",
     points: [],
     services: [
       "10G Copper & 40/100G Optical Fiber Deployments",
