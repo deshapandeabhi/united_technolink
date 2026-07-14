@@ -8,6 +8,7 @@ import {
 import { Container, PrimaryButton, SecondaryButton } from "../components/UI";
 import PartnerMarquee from "../components/PartnerMarquee";
 import LeadForm from "../components/LeadForm";
+import HeroSlider from "../components/HeroSlider";
 import {
   stats, whyChooseUs, valueProps, processSteps, homeFeatureCards,
 } from "../data/content";
@@ -17,49 +18,30 @@ const iconMap = {
   Server, Cloud, SearchCheck, ClipboardList, LifeBuoy, Award,
 };
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  show: (i = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] } }),
-};
-
 export default function Home() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative pt-28 sm:pt-36 lg:pt-[7.5rem] overflow-hidden bg-ink-950">
-        <div className="absolute inset-0 line-pattern opacity-60" />
-        <div className="absolute -top-24 right-[8%] h-72 w-72 sm:h-96 sm:w-96 rounded-full bg-brand-500/25 blur-[110px]" />
-        <div className="absolute bottom-0 left-[10%] h-64 w-64 rounded-full bg-brand-600/15 blur-[100px]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-transparent to-ink-950/40" />
-
-        <Container className="relative py-16 sm:py-24 lg:py-32">
-          <motion.div initial="hidden" animate="show" variants={fadeUp} custom={0}>
-            <span className="inline-block text-brand-300 text-sm font-semibold uppercase tracking-widest">
-              Unparalleled Quality Service
-            </span>
-          </motion.div>
-          <motion.h1
-            initial="hidden" animate="show" variants={fadeUp} custom={1}
-            className="mt-4 font-display font-semibold text-white text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] leading-[1.08] tracking-tight max-w-3xl"
-          >
-            Secure, Scalable &amp; Future-Ready IT Infrastructure
-          </motion.h1>
-          <motion.p
-            initial="hidden" animate="show" variants={fadeUp} custom={2}
-            className="mt-6 text-white/75 text-base sm:text-lg max-w-xl leading-relaxed"
-          >
-            At United Technolink, we strive to build world-class strategy and deploy the best
-            technology for your digital transformation — strengthening security and operational
-            efficiency across your enterprise.
-          </motion.p>
-          <motion.div
-            initial="hidden" animate="show" variants={fadeUp} custom={3}
-            className="mt-9 flex flex-col sm:flex-row gap-3.5 sm:gap-4"
-          >
-            <PrimaryButton to="/contact" className="w-full sm:w-auto justify-center">Get a Consultation</PrimaryButton>
-            <SecondaryButton to="/expertise" light className="w-full sm:w-auto justify-center">Explore Our Expertise</SecondaryButton>
-          </motion.div>
-        </Container>
+      <section className="relative overflow-hidden bg-ink-950 min-h-[600px] sm:min-h-[680px] lg:min-h-[760px]">
+        <HeroSlider>
+          {(slide) => (
+            <Container className="relative h-full flex flex-col justify-center pt-28 pb-16 sm:pt-36 sm:pb-20 lg:pt-[7.5rem] lg:pb-24">
+              <span className="inline-block text-brand-300 text-sm font-semibold uppercase tracking-widest">
+                {slide.eyebrow}
+              </span>
+              <h1 className="mt-4 font-display font-semibold text-white text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] leading-[1.08] tracking-tight max-w-3xl">
+                {slide.title}
+              </h1>
+              <p className="mt-6 text-white/75 text-base sm:text-lg max-w-xl leading-relaxed">
+                {slide.body}
+              </p>
+              <div className="mt-9 flex flex-col sm:flex-row gap-3.5 sm:gap-4">
+                <PrimaryButton to="/contact" className="w-full sm:w-auto justify-center">Get a Consultation</PrimaryButton>
+                <SecondaryButton to="/expertise" light className="w-full sm:w-auto justify-center">Explore Our Expertise</SecondaryButton>
+              </div>
+            </Container>
+          )}
+        </HeroSlider>
       </section>
 
       {/* VALUE PROPS ROW */}
