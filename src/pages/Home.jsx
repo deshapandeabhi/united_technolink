@@ -43,7 +43,7 @@ export default function Home() {
         <HeroSlider>
           {(slide) => (
             <Container className="pt-24 sm:pt-28 lg:pt-32">
-              <span className="inline-block text-brand-400 text-sm font-semibold uppercase tracking-widest">
+              <span className="inline-block text-brand-500 text-sm font-semibold uppercase tracking-widest">
                 {slide.eyebrow}
               </span>
               <h1 className="mt-4 font-display font-semibold text-white text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] leading-[1.15] sm:leading-[1.08] tracking-tight max-w-3xl">
