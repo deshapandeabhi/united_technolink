@@ -45,8 +45,8 @@ export default function Products() {
                 >
                   <div className="grid md:grid-cols-5 gap-6 md:gap-8 lg:gap-10 items-center">
                     <div className={`md:col-span-3 ${reverse ? "md:order-2" : "md:order-1"}`}>
-                      <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-2xl bg-white flex items-center justify-center shadow-card">
-                        <Icon className="h-6 w-6 sm:h-7 sm:w-7 text-brand-600" />
+                      <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-2xl bg-brand-500 flex items-center justify-center shadow-card">
+                        <Icon className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
                       </div>
                       <p className="mt-5 sm:mt-6 text-xs font-semibold uppercase tracking-widest text-brand-600">
                         {p.tagline}

@@ -86,8 +86,8 @@ export default function Expertise() {
                         {current.title}
                       </h2>
                     </div>
-                    <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-2xl bg-white shadow-card flex items-center justify-center shrink-0">
-                      <Icon className="h-6 w-6 sm:h-7 sm:w-7 text-brand-600" />
+                    <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-2xl bg-brand-500 shadow-card flex items-center justify-center shrink-0">
+                      <Icon className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
                     </div>
                   </div>
 

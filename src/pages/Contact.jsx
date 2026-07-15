@@ -43,8 +43,8 @@ export default function Contact() {
                 <h3 className="font-display font-semibold text-ink-900 text-lg">Drop by!</h3>
                 <div className="mt-5 sm:mt-6 flex flex-col gap-5 sm:gap-6">
                   <div className="flex gap-4">
-                    <div className="h-11 w-11 rounded-xl bg-white shadow-card flex items-center justify-center shrink-0">
-                      <MapPin className="h-5 w-5 text-brand-600" />
+                    <div className="h-11 w-11 rounded-xl bg-brand-500 shadow-card flex items-center justify-center shrink-0">
+                      <MapPin className="h-5 w-5 text-white" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-ink-900">Office Address</p>
@@ -52,8 +52,8 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="flex gap-4">
-                    <div className="h-11 w-11 rounded-xl bg-white shadow-card flex items-center justify-center shrink-0">
-                      <Phone className="h-5 w-5 text-brand-600" />
+                    <div className="h-11 w-11 rounded-xl bg-brand-500 shadow-card flex items-center justify-center shrink-0">
+                      <Phone className="h-5 w-5 text-white" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-ink-900">Call Us</p>
@@ -61,8 +61,8 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="flex gap-4">
-                    <div className="h-11 w-11 rounded-xl bg-white shadow-card flex items-center justify-center shrink-0">
-                      <Mail className="h-5 w-5 text-brand-600" />
+                    <div className="h-11 w-11 rounded-xl bg-brand-500 shadow-card flex items-center justify-center shrink-0">
+                      <Mail className="h-5 w-5 text-white" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-ink-900">Email Us</p>
@@ -70,8 +70,8 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="flex gap-4">
-                    <div className="h-11 w-11 rounded-xl bg-white shadow-card flex items-center justify-center shrink-0">
-                      <Clock className="h-5 w-5 text-brand-600" />
+                    <div className="h-11 w-11 rounded-xl bg-brand-500 shadow-card flex items-center justify-center shrink-0">
+                      <Clock className="h-5 w-5 text-white" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-ink-900">Working Hours</p>
@@ -79,8 +79,8 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="flex gap-4">
-                    <div className="h-11 w-11 rounded-xl bg-white shadow-card flex items-center justify-center shrink-0">
-                      <Building2 className="h-5 w-5 text-brand-600" />
+                    <div className="h-11 w-11 rounded-xl bg-brand-500 shadow-card flex items-center justify-center shrink-0">
+                      <Building2 className="h-5 w-5 text-white" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-ink-900">{contact.legalName}</p>

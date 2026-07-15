@@ -69,8 +69,8 @@ export default function Home() {
               const Icon = iconMap[v.icon] || Server;
               return (
                 <div key={v.label} className="flex items-center gap-3">
-                  <div className="h-11 w-11 sm:h-12 sm:w-12 rounded-xl bg-brand-50 flex items-center justify-center shrink-0">
-                    <Icon className="h-5 w-5 sm:h-5.5 sm:w-5.5 text-brand-400" />
+                  <div className="h-11 w-11 sm:h-12 sm:w-12 rounded-xl bg-brand-500 flex items-center justify-center shrink-0">
+                    <Icon className="h-5 w-5 sm:h-5.5 sm:w-5.5 text-white" />
                   </div>
                   <span className="text-xs sm:text-sm font-semibold text-ink-900 leading-snug">{v.label}</span>
                 </div>

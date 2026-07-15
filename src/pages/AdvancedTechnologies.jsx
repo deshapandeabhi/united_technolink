@@ -43,8 +43,8 @@ export default function AdvancedTechnologies() {
                 className="rounded-2xl bg-[#eef4e0] border border-black/5 p-6 sm:p-8 lg:p-10"
               >
                 <div className="flex items-start gap-4 sm:gap-5 flex-wrap">
-                  <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-2xl bg-white shadow-card flex items-center justify-center shrink-0">
-                    <Cpu className="h-6 w-6 sm:h-7 sm:w-7 text-brand-600" />
+                  <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-2xl bg-brand-500 shadow-card flex items-center justify-center shrink-0">
+                    <Cpu className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
                   </div>
                   <div className="flex-1 min-w-[200px]">
                     <p className="text-xs font-semibold uppercase tracking-widest text-brand-600">
