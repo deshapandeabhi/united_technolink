@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Send, CheckCircle2 } from "lucide-react";
 
 const inputClasses =
-  "w-full rounded-xl bg-white border border-black/10 px-4 py-3 text-sm text-ink-900 placeholder:text-ink-500/60 focus:outline-none focus:border-brand-500/60 focus:ring-2 focus:ring-brand-500/15 transition-all";
+  "w-full rounded-xl bg-white border border-black/10 px-4 py-3 text-sm text-ink-900 placeholder:text-ink-900 focus:outline-none focus:border-brand-500/60 focus:ring-2 focus:ring-brand-500/15 transition-all";
 
 const inquiryOptions = [
   "IT Infrastructure & Datacenter",
@@ -44,7 +44,7 @@ export default function LeadForm({ className = "" }) {
         <input required name="name" value={form.name} onChange={handleChange} placeholder="Name" className={inputClasses} />
         <input required type="email" name="email" value={form.email} onChange={handleChange} placeholder="Email" className={inputClasses} />
       </div>
-      <select name="inquiry" value={form.inquiry} onChange={handleChange} className={`${inputClasses} text-ink-900/80`}>
+      <select name="inquiry" value={form.inquiry} onChange={handleChange} className={`${inputClasses} text-ink-900`}>
         <option value="">What is your inquiry about?</option>
         {inquiryOptions.map((o) => <option key={o} value={o}>{o}</option>)}
       </select>
