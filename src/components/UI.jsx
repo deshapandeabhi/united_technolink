@@ -10,11 +10,11 @@ export function Eyebrow({ children, light = false }) {
     <span
       className={`inline-flex items-center gap-2 rounded-full border px-5 py-2 text-sm sm:text-base font-semibold uppercase tracking-widest ${
         light
-          ? "border-brand-300/30 bg-brand-300/10 text-brand-300"
+          ? "border-brand-400/30 bg-brand-400/10 text-brand-400"
           : "border-brand-500/25 bg-brand-50 text-brand-700"
       }`}
     >
-      <span className={`h-2 w-2 rounded-full ${light ? "bg-brand-300" : "bg-brand-500"}`} />
+      <span className={`h-2 w-2 rounded-full ${light ? "bg-brand-400" : "bg-brand-500"}`} />
       {children}
     </span>
   );
