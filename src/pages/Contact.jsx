@@ -134,28 +134,28 @@ export default function Contact() {
                     </h3>
                     <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
                       <div>
-                        <label className="block text-xs font-medium text-ink-500 mb-2">Full Name *</label>
+                        <label className="block text-xs font-medium text-ink-900 mb-2">Full Name *</label>
                         <input
                           required name="name" value={form.name} onChange={handleChange}
                           className={inputClasses} placeholder="Jane Doe"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-medium text-ink-500 mb-2">Company</label>
+                        <label className="block text-xs font-medium text-ink-900 mb-2">Company</label>
                         <input
                           name="company" value={form.company} onChange={handleChange}
                           className={inputClasses} placeholder="Your organization"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-medium text-ink-500 mb-2">Email *</label>
+                        <label className="block text-xs font-medium text-ink-900 mb-2">Email *</label>
                         <input
                           required type="email" name="email" value={form.email} onChange={handleChange}
                           className={inputClasses} placeholder="jane@company.com"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-medium text-ink-500 mb-2">Phone</label>
+                        <label className="block text-xs font-medium text-ink-900 mb-2">Mobile No.</label>
                         <input
                           name="phone" value={form.phone} onChange={handleChange}
                           className={inputClasses} placeholder="+91 00000 00000"
@@ -163,7 +163,7 @@ export default function Contact() {
                       </div>
                     </div>
                     <div>
-                      <label className="block text-xs font-medium text-ink-500 mb-2">How can we help? *</label>
+                      <label className="block text-xs font-medium text-ink-900 mb-2">How can we help? *</label>
                       <textarea
                         required rows={5} name="message" value={form.message} onChange={handleChange}
                         className={inputClasses} placeholder="Tell us about your infrastructure, networking, security, or cloud requirements..."
