@@ -1,4 +1,5 @@
 import express from "express";
+import compression from "compression";
 import cookieParser from "cookie-parser";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -8,12 +9,14 @@ import { createSession, destroySession, requireAdmin } from "./auth.js";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, "..");
 const distDir = path.join(rootDir, "dist");
+const assetsDir = path.join(distDir, "assets");
 const adminDir = path.join(rootDir, "admin");
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "changeme";
 const PORT = process.env.PORT || 3001;
 
 const app = express();
+app.use(compression());
 app.use(express.json());
 app.use(cookieParser());
 
@@ -58,8 +61,13 @@ app.get("/api/admin/leads", requireAdmin, (req, res) => {
 app.use("/admin", express.static(adminDir));
 
 // --- Marketing site (React SPA) ---
-app.use(express.static(distDir));
+// Vite fingerprints everything under /assets with a content hash, so it's
+// safe to cache those for a year; index.html and other unhashed files
+// (favicon, robots.txt) get a short cache so a new deploy is picked up fast.
+app.use("/assets", express.static(assetsDir, { maxAge: "1y", immutable: true }));
+app.use(express.static(distDir, { maxAge: "1h", index: false }));
 app.use((req, res) => {
+  res.set("Cache-Control", "no-cache");
   res.sendFile(path.join(distDir, "index.html"));
 });
 
