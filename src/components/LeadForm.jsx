@@ -14,13 +14,29 @@ const inquiryOptions = [
 
 export default function LeadForm({ className = "" }) {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({ name: "", email: "", inquiry: "", phone: "", message: "" });
 
   const handleChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ source: "home", ...form }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again or call us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -50,11 +66,13 @@ export default function LeadForm({ className = "" }) {
       </select>
       <input name="phone" value={form.phone} onChange={handleChange} placeholder="Phone" className={inputClasses} />
       <textarea rows={4} name="message" value={form.message} onChange={handleChange} placeholder="Message Details!" className={inputClasses} />
+      {error && <p className="text-sm text-red-600">{error}</p>}
       <button
         type="submit"
-        className="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-brand-500 text-white px-6 py-3.5 text-sm font-semibold hover:bg-brand-600 transition-colors w-full sm:w-auto"
+        disabled={submitting}
+        className="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-brand-500 text-white px-6 py-3.5 text-sm font-semibold hover:bg-brand-600 transition-colors w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        Submit Request
+        {submitting ? "Submitting..." : "Submit Request"}
         <Send className="h-4 w-4" />
       </button>
     </form>

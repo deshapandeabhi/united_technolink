@@ -16,13 +16,29 @@ const heroImages = [contactCloudOfficeImg, contactSecurityShieldImg, contactClou
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", message: "" });
 
   const handleChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ source: "contact", ...form }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again or call us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -169,11 +185,13 @@ export default function Contact() {
                         className={inputClasses} placeholder="Tell us about your infrastructure, networking, security, or cloud requirements..."
                       />
                     </div>
+                    {error && <p className="text-sm text-red-600">{error}</p>}
                     <button
                       type="submit"
-                      className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-brand-500 text-white px-6 py-3.5 text-sm font-semibold hover:bg-brand-600 transition-colors"
+                      disabled={submitting}
+                      className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-brand-500 text-white px-6 py-3.5 text-sm font-semibold hover:bg-brand-600 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      Send Message
+                      {submitting ? "Sending..." : "Send Message"}
                       <Send className="h-4 w-4" />
                     </button>
                     <p className="text-xs text-ink-500 text-center">

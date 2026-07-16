@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>United Technolink — Admin</title>
+<style>
+  :root {
+    --ink-900: #244d76;
+    --ink-700: #3d70a0;
+    --ink-500: #74a4cd;
+    --brand-500: #7cb63e;
+    --brand-600: #689a2f;
+    --bg: #f4f6f0;
+    --card: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--ink-900);
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 20px 80px; }
+
+  /* Login */
+  #login-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 10px 40px rgba(36, 77, 118, 0.12);
+  }
+  .login-card h1 { font-size: 20px; margin: 0 0 4px; }
+  .login-card p { font-size: 13px; color: var(--ink-500); margin: 0 0 20px; }
+  input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.12);
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  button {
+    cursor: pointer;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    background: var(--brand-500);
+    color: white;
+    width: 100%;
+    transition: background 0.15s ease;
+  }
+  button:hover { background: var(--brand-600); }
+  .error { color: #c0392b; font-size: 13px; margin-top: 10px; display: none; }
+
+  /* Dashboard */
+  #dashboard-screen { display: none; }
+  header.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  header.top h1 { font-size: 22px; margin: 0; }
+  #logout-btn { width: auto; background: transparent; color: var(--ink-700); border: 1px solid rgba(0,0,0,0.15); }
+  #logout-btn:hover { background: rgba(0,0,0,0.04); }
+
+  .table-card {
+    background: var(--card);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(36, 77, 118, 0.08);
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  thead th {
+    text-align: left;
+    padding: 12px 16px;
+    background: #eef4e0;
+    color: var(--ink-900);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 12px 16px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    vertical-align: top;
+  }
+  tbody tr:hover { background: rgba(124, 182, 62, 0.05); }
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .badge.home { background: #e4f3d2; color: var(--brand-600); }
+  .badge.contact { background: #dde9f5; color: var(--ink-700); }
+  .empty { padding: 60px 20px; text-align: center; color: var(--ink-500); }
+  .refresh-row { display: flex; justify-content: flex-end; margin-bottom: 12px; }
+  #refresh-btn { width: auto; background: var(--ink-900); }
+  #refresh-btn:hover { background: var(--ink-700); }
+</style>
+</head>
+<body>
+
+<div id="login-screen">
+  <div class="login-card">
+    <h1>Admin Login</h1>
+    <p>United Technolink — form submissions dashboard</p>
+    <form id="login-form">
+      <input type="password" id="password" placeholder="Password" autofocus required />
+      <button type="submit">Sign in</button>
+      <div class="error" id="login-error">Incorrect password.</div>
+    </form>
+  </div>
+</div>
+
+<div id="dashboard-screen">
+  <div class="wrap">
+    <header class="top">
+      <h1>Form Submissions</h1>
+      <button id="logout-btn">Log out</button>
+    </header>
+    <div class="refresh-row">
+      <button id="refresh-btn">Refresh</button>
+    </div>
+    <div class="table-card">
+      <table id="leads-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Source</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Company</th>
+            <th>Inquiry</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+        <tbody id="leads-body"></tbody>
+      </table>
+      <div class="empty" id="empty-state" style="display:none;">No submissions yet.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const loginScreen = document.getElementById("login-screen");
+  const dashboardScreen = document.getElementById("dashboard-screen");
+  const loginForm = document.getElementById("login-form");
+  const loginError = document.getElementById("login-error");
+  const leadsBody = document.getElementById("leads-body");
+  const emptyState = document.getElementById("empty-state");
+
+  function escapeHtml(str) {
+    const div = document.createElement("div");
+    div.textContent = str ?? "";
+    return div.innerHTML;
+  }
+
+  function formatDate(iso) {
+    try {
+      return new Date(iso + "Z").toLocaleString();
+    } catch {
+      return iso;
+    }
+  }
+
+  async function loadLeads() {
+    const res = await fetch("/api/admin/leads");
+    if (res.status === 401) {
+      showLogin();
+      return;
+    }
+    const leads = await res.json();
+    leadsBody.innerHTML = "";
+    emptyState.style.display = leads.length ? "none" : "block";
+    for (const lead of leads) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${formatDate(lead.created_at)}</td>
+        <td><span class="badge ${lead.source}">${escapeHtml(lead.source)}</span></td>
+        <td>${escapeHtml(lead.name)}</td>
+        <td>${escapeHtml(lead.email)}</td>
+        <td>${escapeHtml(lead.phone)}</td>
+        <td>${escapeHtml(lead.company)}</td>
+        <td>${escapeHtml(lead.inquiry)}</td>
+        <td>${escapeHtml(lead.message)}</td>
+      `;
+      leadsBody.appendChild(tr);
+    }
+  }
+
+  function showDashboard() {
+    loginScreen.style.display = "none";
+    dashboardScreen.style.display = "block";
+    loadLeads();
+  }
+
+  function showLogin() {
+    loginScreen.style.display = "flex";
+    dashboardScreen.style.display = "none";
+  }
+
+  loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    loginError.style.display = "none";
+    const password = document.getElementById("password").value;
+    const res = await fetch("/api/admin/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password }),
+    });
+    if (res.ok) {
+      showDashboard();
+    } else {
+      loginError.style.display = "block";
+    }
+  });
+
+  document.getElementById("logout-btn").addEventListener("click", async () => {
+    await fetch("/api/admin/logout", { method: "POST" });
+    showLogin();
+  });
+
+  document.getElementById("refresh-btn").addEventListener("click", loadLeads);
+
+  // On load, try hitting the protected endpoint — if the session cookie is
+  // still valid we skip straight to the dashboard.
+  fetch("/api/admin/leads").then((res) => {
+    if (res.ok) showDashboard();
+  });
+</script>
+
+</body>
+</html>
