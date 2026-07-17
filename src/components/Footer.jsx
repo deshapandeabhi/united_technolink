@@ -170,7 +170,7 @@ export default function Footer() {
           <div className="px-4 py-3 space-y-2 text-white/70">
             <p><span className="text-white/40">PROJECT:</span> UNITED_TECHNOLINK_WEBSITE</p>
             <p><span className="text-white/40">BUILD_HASH:</span> 2026.07.UTL</p>
-            <p><span className="text-white/40">VERSION:</span> 1.0.0</p>
+            <p><span className="text-white/40">VERSION:</span> 1.0.1</p>
             <p><span className="text-white/40">ENGINEER:</span> <span className="text-amber-400">Abhishek Deshapande</span></p>
             <p><span className="text-white/40">ROLE:</span> Lead Developer</p>
             <p className="pt-2 mt-2 border-t border-white/10 text-white/35 text-[11px]">
