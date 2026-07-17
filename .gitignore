@@ -14,6 +14,9 @@ dist-ssr
 
 # Local SQLite data (leads database)
 /data
+/bigrock/data/*.db
+/bigrock/data/*.db-*
+/bigrock/api/config.php
 
 # Editor directories and files
 .vscode/*

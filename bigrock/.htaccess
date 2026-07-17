@@ -1,0 +1,33 @@
+RewriteEngine On
+
+# Pretty API routes -> PHP scripts (keeps the frontend's fetch() URLs
+# identical to the Node/Railway deployment)
+RewriteRule ^api/leads$ api/leads.php [L]
+RewriteRule ^api/admin/login$ api/admin-login.php [L]
+RewriteRule ^api/admin/logout$ api/admin-logout.php [L]
+RewriteRule ^api/admin/leads$ api/admin-leads.php [L]
+
+# React Router (client-side routing) fallback: any request that isn't a
+# real file/directory and isn't an API or admin route gets index.html.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/api/
+RewriteCond %{REQUEST_URI} !^/admin/
+RewriteRule ^ index.html [L]
+
+# Compress text-based responses
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/json
+</IfModule>
+
+# Long-lived caching for Vite's content-hashed build assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
