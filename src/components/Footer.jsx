@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Mail, Phone, ArrowRight, Send } from "lucide-react";
 import Logo from "./Logo";
@@ -13,9 +13,30 @@ const quickLinks = [
   { to: "/contact", label: "Contact" },
 ];
 
+const SIGNATURE_CLICKS_REQUIRED = 5;
+const SIGNATURE_CLICK_WINDOW_MS = 1200;
+
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
+  const [signatureClicks, setSignatureClicks] = useState(0);
+  const [showSignature, setShowSignature] = useState(false);
+  const lastClickRef = useRef(0);
+
+  const handleCopyrightClick = () => {
+    const now = Date.now();
+    const withinWindow = now - lastClickRef.current < SIGNATURE_CLICK_WINDOW_MS;
+    lastClickRef.current = now;
+
+    setSignatureClicks((prev) => {
+      const next = withinWindow ? prev + 1 : 1;
+      if (next >= SIGNATURE_CLICKS_REQUIRED) {
+        setShowSignature(true);
+        return 0;
+      }
+      return next;
+    });
+  };
 
   return (
     <footer className="bg-ink-950">
@@ -125,7 +146,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-          <p className="text-xs text-white/40">
+          <p onClick={handleCopyrightClick} className="text-xs text-white/40 select-none">
             © {new Date().getFullYear()} {contact.legalName}. All rights reserved. GSTIN: {contact.gst}
           </p>
           <p className="text-xs text-white/40">
@@ -133,6 +154,31 @@ export default function Footer() {
           </p>
         </div>
       </div>
+
+      {showSignature && (
+        <div className="fixed bottom-5 right-5 z-50 w-[92vw] max-w-sm rounded-lg border border-white/10 border-l-4 border-l-red-500 bg-[#0a0f14] shadow-2xl font-mono text-[13px] leading-relaxed">
+          <div className="flex items-center justify-between px-4 pt-3 pb-2 border-b border-white/10">
+            <span className="text-white/50 tracking-widest text-xs">SYSTEM_MANIFEST</span>
+            <button
+              onClick={() => setShowSignature(false)}
+              aria-label="Close"
+              className="text-white/40 hover:text-white transition-colors"
+            >
+              [X]
+            </button>
+          </div>
+          <div className="px-4 py-3 space-y-2 text-white/70">
+            <p><span className="text-white/40">PROJECT:</span> UNITED_TECHNOLINK_WEBSITE</p>
+            <p><span className="text-white/40">BUILD_HASH:</span> 2026.07.UTL</p>
+            <p><span className="text-white/40">VERSION:</span> 1.0.0</p>
+            <p><span className="text-white/40">ENGINEER:</span> <span className="text-amber-400">Abhishek Deshapande</span></p>
+            <p><span className="text-white/40">ROLE:</span> Lead Developer</p>
+            <p className="pt-2 mt-2 border-t border-white/10 text-white/35 text-[11px]">
+              INTERNAL USE ONLY. VERIFIED PRODUCTION DEPLOYMENT.
+            </p>
+          </div>
+        </div>
+      )}
     </footer>
   );
 }
