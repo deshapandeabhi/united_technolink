@@ -31,6 +31,17 @@ jobs:
           mkdir -p deploy/data
           cp bigrock/.htaccess deploy/.htaccess
           cp bigrock/data/.htaccess deploy/data/.htaccess
+          cp bigrock/maintenance.html deploy/maintenance.html
+
+      # Set the MAINTENANCE_MODE repository variable to "on" (Settings >
+      # Secrets and variables > Actions > Variables) and re-run this
+      # workflow to take the site down; set it to "off" to bring it back.
+      - name: Enable maintenance mode
+        if: vars.MAINTENANCE_MODE == 'on'
+        run: |
+          awk '{ print } /^RewriteEngine On$/ { while ((getline line < "bigrock/maintenance.htaccess") > 0) print line }' \
+            bigrock/.htaccess > deploy/.htaccess
+          grep -q 'R=503' deploy/.htaccess
 
       - name: Deploy over FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5

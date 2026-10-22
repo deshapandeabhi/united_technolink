@@ -1,0 +1,11 @@
+
+# Maintenance mode -- inserted by the deploy workflow when the
+# MAINTENANCE_MODE repository variable is "on". Every public page
+# returns 503 with maintenance.html; the admin dashboard and its API
+# stay reachable so leads can still be viewed.
+ErrorDocument 503 /maintenance.html
+RewriteCond %{REQUEST_URI} !^/maintenance\.html$
+RewriteCond %{REQUEST_URI} !^/favicon-
+RewriteCond %{REQUEST_URI} !^/admin/
+RewriteCond %{REQUEST_URI} !^/api/admin/
+RewriteRule ^ - [R=503,L]
